@@ -1,0 +1,30 @@
+{
+	"name": "third-party-service",
+	"version": "1.0.0",
+	"description": "Third-party service for handling external integrations such as Mailgun notifications.",
+	"main": "src/app.js",
+	"type": "module",
+	"scripts": {
+		"start": "node src/app.js",
+		"dev": "nodemon src/app.js"
+	},
+	"dependencies": {
+		"dotenv": "latest",
+		"express": "latest",
+		"form-data": "latest",
+		"mailgun.js": "latest",
+		"mongoose": "latest",
+		"uuid": "latest"
+	},
+	"devDependencies": {
+		"nodemon": "latest"
+	},
+	"keywords": [
+		"third-party",
+		"notifications",
+		"mailgun",
+		"microservice"
+	],
+	"author": "",
+	"license": "ISC"
+}

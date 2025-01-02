@@ -1,0 +1,40 @@
+version: '3.8'
+services:
+  auth-service:
+    build:
+      context: ./auth-service
+    ports:
+      - "4000:4000"
+    environment:
+      - JWT_SECRET=MMSD5153-MSMD5163-MOBILE-BACKEND
+      - DB_URI=mongodb+srv://muhammadmizan92:852812Gt@cluster0.ehgx6.mongodb.net/gym_membership?retryWrites=true&w=majority&appName=Cluster0
+    depends_on:
+      - mongodb
+
+  crud-service:
+    build:
+      context: ./crud-service
+    ports:
+      - "5000:5000"
+    environment:
+      - JWT_SECRET=MMSD5153-MSMD5163-MOBILE-BACKEND
+      - DB_URI=mongodb+srv://muhammadmizan92:852812Gt@cluster0.ehgx6.mongodb.net/gym_membership?retryWrites=true&w=majority&appName=Cluster0
+    depends_on:
+      - mongodb
+
+  third-party:
+    build:
+      context: ./third-party
+    ports:
+      - "6000:6000"
+
+  mongodb:
+    image: mongo
+    container_name: mongodb
+    ports:
+      - "27017:27017"
+    volumes:
+      - mongo-data:/data/db
+
+volumes:
+  mongo-data:
