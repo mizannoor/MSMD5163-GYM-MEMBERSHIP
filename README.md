@@ -15,7 +15,7 @@ The Gym Membership System enables efficient management of gym members, plans, pa
 ### 1. **Authentication Service (`auth-service`)**  
 Handles user login, authentication, and token management.  
 - **Endpoints**:
-  - `POST /login`: Authenticates user and returns a JWT token.
+  - `POST /auth/login`: Authenticates user and returns a JWT token.
 - **Features**:
   - Validates `Accept` and `Content-Type` headers.
   - Implements secure password hashing and token generation.
@@ -23,27 +23,27 @@ Handles user login, authentication, and token management.
 ### 2. **CRUD Service (`crud-service`)**  
 Manages CRUD operations for gym-related entities such as users, memberships, plans, payments, and notifications.  
 - **Endpoints**:
-  - `POST /entities`: Create a new record.
-  - `GET /entities`: Retrieve existing records.
-  - `PUT /entities/:id`: Update a record.
-  - `DELETE /entities/:id`: Delete a record.
+  - `POST /api/users`: Create a new record.
+  - `GET /api/users`: Retrieve existing records.
+  - `PUT /api/users/:id`: Update a record.
+  - `DELETE /api/users/:id`: Delete a record.
 - **Features**:
   - Protects endpoints with JWT authentication.
   - Supports comprehensive error handling.
 
 ### 3. **Third-Party Integration Service (`third-party`)**  
-Provides integration with external services for notifications (e.g., email, SMS).  
+Provides integration with external services for notifications (e.g., email).  
 - **Endpoints**:
-  - `POST /notifications`: Send notifications.
+  - `POST /api/send-email`: Send notifications.
 - **Features**:
-  - Supports multiple notification types (email, SMS, push).
+  - Supports multiple notification types (email).
 
 ---
 
 ## **Architecture**
 The system is built with Node.js, Docker, and MongoDB, adhering to the microservice architecture. Each microservice operates independently and communicates securely using JWT tokens.  
 
-![Architecture Diagram Placeholder](https://via.placeholder.com/800x400?text=Architecture+Diagram)
+![Architecture Diagram Placeholder](https://github.com/mizannoor/MSMD5163-GYM-MEMBERSHIP/gym_membership_erd.png)
 
 ---
 
@@ -56,7 +56,6 @@ gym-membership-system/
 ├── auth-service/              # Authentication microservice
 ├── crud-service/              # CRUD microservice
 ├── third-party/               # Third-party integration microservice
-└── shared/                    # Shared resources (e.g., database connection)
 ```
 
 ---
@@ -107,7 +106,7 @@ Use Postman or any REST client to test the endpoints. Example:
 
 2. **CRUD Operations**:
    ```http
-   GET /entities
+   GET /api/users
    ```
 
 ---
