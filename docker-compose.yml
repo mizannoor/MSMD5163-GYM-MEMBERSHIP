@@ -4,10 +4,14 @@ services:
     build:
       context: ./auth-service
     ports:
-      - "4000:4000"
+      - "3000:3000"
     environment:
       - JWT_SECRET=MMSD5153-MSMD5163-MOBILE-BACKEND
       - DB_URI=mongodb+srv://muhammadmizan92:852812Gt@cluster0.ehgx6.mongodb.net/gym_membership?retryWrites=true&w=majority&appName=Cluster0
+      - PORT=4000
+      - MAILGUN_API_KEY=bb4d956d3341436472f1efe38bddc1df-e61ae8dd-93d8ca1f
+      - MAILGUN_DOMAIN=sandbox4d91c13fd80d4bf084fd0cd1d540e173.mailgun.org
+      - MAILGUN_FROM_EMAIL=mailgun@sandbox4d91c13fd80d4bf084fd0cd1d540e173.mailgun.org
     depends_on:
       - mongodb
 
@@ -15,10 +19,14 @@ services:
     build:
       context: ./crud-service
     ports:
-      - "5000:5000"
+      - "4000:4000"
     environment:
       - JWT_SECRET=MMSD5153-MSMD5163-MOBILE-BACKEND
       - DB_URI=mongodb+srv://muhammadmizan92:852812Gt@cluster0.ehgx6.mongodb.net/gym_membership?retryWrites=true&w=majority&appName=Cluster0
+      - PORT=4000
+      - MAILGUN_API_KEY=bb4d956d3341436472f1efe38bddc1df-e61ae8dd-93d8ca1f
+      - MAILGUN_DOMAIN=sandbox4d91c13fd80d4bf084fd0cd1d540e173.mailgun.org
+      - MAILGUN_FROM_EMAIL=mailgun@sandbox4d91c13fd80d4bf084fd0cd1d540e173.mailgun.org
     depends_on:
       - mongodb
 
@@ -26,7 +34,14 @@ services:
     build:
       context: ./third-party
     ports:
-      - "6000:6000"
+      - "5000:5000"
+    environment:
+      - JWT_SECRET=MMSD5153-MSMD5163-MOBILE-BACKEND
+      - DB_URI=mongodb+srv://muhammadmizan92:852812Gt@cluster0.ehgx6.mongodb.net/gym_membership?retryWrites=true&w=majority&appName=Cluster0
+      - PORT=5000
+      - MAILGUN_API_KEY=bb4d956d3341436472f1efe38bddc1df-e61ae8dd-93d8ca1f
+      - MAILGUN_DOMAIN=sandbox4d91c13fd80d4bf084fd0cd1d540e173.mailgun.org
+      - MAILGUN_FROM_EMAIL=mailgun@sandbox4d91c13fd80d4bf084fd0cd1d540e173.mailgun.org
 
   mongodb:
     image: mongo
