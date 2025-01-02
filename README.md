@@ -1,7 +1,3 @@
-Here's a **README.md** content file for your repository:
-
----
-
 # GYM MEMBERSHIP SYSTEM - MSMD5163  
 This repository contains the **Gym Membership System**, developed as a microservice-based architecture for the **MSMD5163 Mobile Backend** project. The system includes core functionalities such as user authentication, CRUD operations, and integration with third-party services.  
 
@@ -120,7 +116,3 @@ Use Postman or any REST client to test the endpoints. Example:
 - [Node.js Documentation](https://nodejs.org/)
 - [MongoDB Documentation](https://www.mongodb.com/docs/)
 - [Docker Documentation](https://docs.docker.com/)
-
----
-
-Let me know if you'd like additional sections or changes!
