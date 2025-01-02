@@ -43,7 +43,7 @@ Provides integration with external services for notifications (e.g., email).
 ## **Architecture**
 The system is built with Node.js, Docker, and MongoDB, adhering to the microservice architecture. Each microservice operates independently and communicates securely using JWT tokens.  
 
-![Architecture Diagram Placeholder](https://github.com/mizannoor/MSMD5163-GYM-MEMBERSHIP/gym_membership_erd.png)
+![Architecture Diagram Placeholder](https://github.com/mizannoor/MSMD5163-GYM-MEMBERSHIP/assets/others/gym_membership_erd.png)
 
 ---
 
