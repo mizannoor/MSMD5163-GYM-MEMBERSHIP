@@ -13,7 +13,7 @@ export const createLog = async (req, res) => {
 
 export const getLog = async (req, res) => {
 	try {
-		const log = await Log.findById(req.params.id);
+		const log = req.params?.id ? await Log.findById(req.params.id) : await Log.find();
 		if (!log) return res.status(404).json({ error: "Log not found" });
 		res.status(200).json(log);
 	} catch (error) {

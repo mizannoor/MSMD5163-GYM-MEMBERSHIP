@@ -13,37 +13,37 @@ const router = express.Router();
 
 // User Routes
 router.post("/users", createUser);
-router.get("/users/:id", getUser);
+router.get("/users/:id?", getUser);
 router.put("/users/:id", updateUser);
 router.delete("/users/:id", deleteUser);
 
 // Membership Routes
 router.post("/memberships", createMembership);
-router.get("/memberships/:id", getMembership);
+router.get("/memberships/:id?", getMembership);
 router.put("/memberships/:id", updateMembership);
 router.delete("/memberships/:id", deleteMembership);
 
 // Plan Routes
 router.post("/plans", createPlan);
-router.get("/plans/:id", getPlan);
+router.get("/plans/:id?", getPlan);
 router.put("/plans/:id", updatePlan);
 router.delete("/plans/:id", deletePlan);
 
 // Payment Routes
 router.post("/payments", createPayment);
-router.get("/payments/:id", getPayment);
+router.get("/payments/:id?", getPayment);
 router.put("/payments/:id", updatePayment);
 router.delete("/payments/:id", deletePayment);
 
 // Notification Routes
 router.post("/notifications", createNotification);
-router.get("/notifications/:id", getNotification);
+router.get("/notifications/:id?", getNotification);
 router.put("/notifications/:id", updateNotification);
 router.delete("/notifications/:id", deleteNotification);
 
 // Log Routes
 router.post("/logs", createLog);
-router.get("/logs/:id", getLog);
+router.get("/logs/:id?", getLog);
 router.put("/logs/:id", updateLog);
 router.delete("/logs/:id", deleteLog);
 

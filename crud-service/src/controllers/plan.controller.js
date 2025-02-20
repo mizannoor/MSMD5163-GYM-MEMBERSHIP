@@ -13,7 +13,7 @@ export const createPlan = async (req, res) => {
 
 export const getPlan = async (req, res) => {
 	try {
-		const plan = await Plan.findById(req.params.id);
+		const plan = req.params?.id ? await Plan.findById(req.params.id) : await Plan.find();
 		if (!plan) return res.status(404).json({ error: "Plan not found" });
 		res.status(200).json(plan);
 	} catch (error) {

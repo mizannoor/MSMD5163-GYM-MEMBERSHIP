@@ -15,7 +15,7 @@ export const createMembership = async (req, res) => {
 
 export const getMembership = async (req, res) => {
 	try {
-		const membership = await Membership.findById(req.params.id);
+		const membership = req.params?.id ? await Membership.findById(req.params.id) : await Membership.find();
 		if (!membership) return res.status(404).json({ error: "Membership not found" });
 		res.status(200).json(membership);
 	} catch (error) {

@@ -3,6 +3,14 @@ import bcrypt from "bcrypt";
 import jwt from "jsonwebtoken";
 import User from "../models/user.model.js"; // Assume User schema/model exists
 
+export const test = async (req, res) => {
+	const { email, password } = req.body;
+	try {
+		res.status(200).json({ test: "--- data ---", data: req.body });
+	} catch (error) {
+		res.status(500).json({ error: "Server error", cause: error });
+	}
+};
 export const login = async (req, res) => {
 	const { email, password } = req.body;
 	try {
@@ -13,7 +21,7 @@ export const login = async (req, res) => {
 		if (!isMatch) return res.status(401).json({ error: "Invalid credentials" });
 
 		const token = jwt.sign({ userId: user._id, role: user.role }, process.env.JWT_SECRET, { expiresIn: "24h" });
-		res.status(200).json({ token });
+		res.status(200).json({ token, userId: user._id, role: user.role });
 	} catch (error) {
 		res.status(500).json({ error: "Server error", cause: error });
 	}

@@ -22,7 +22,7 @@ export const createNotification = async (req, res) => {
 
 export const getNotification = async (req, res) => {
 	try {
-		const notification = await Notification.findById(req.params.id);
+		const notification = req.params?.id ? await Notification.findById(req.params.id) : await Notification.find();
 		if (!notification) return res.status(404).json({ error: "Notification not found" });
 		res.status(200).json(notification);
 	} catch (error) {

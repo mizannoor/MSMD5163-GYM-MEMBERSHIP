@@ -16,7 +16,7 @@ app.use('/auth', authRoutes);
 // MongoDB Connection
 connectToDatabase();
 
-app.listen(PORT, () => console.log(`Authentication Service running on port ${PORT}`));
+app.listen(PORT, '0.0.0.0', () => console.log(`Authentication Service running on port ${PORT}`));
 
 process.on("SIGINT", async () => {
 	await disconnectFromDatabase();

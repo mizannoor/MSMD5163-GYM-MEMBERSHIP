@@ -13,7 +13,7 @@ export const createPayment = async (req, res) => {
 
 export const getPayment = async (req, res) => {
 	try {
-		const payment = await Payment.findById(req.params.id);
+		const payment = req.params?.id ? await Payment.findById(req.params.id) : await Payment.find();
 		if (!payment) return res.status(404).json({ error: "Payment not found" });
 		res.status(200).json(payment);
 	} catch (error) {
